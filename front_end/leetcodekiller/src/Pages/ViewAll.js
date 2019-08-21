@@ -1,6 +1,6 @@
 import React from 'react';
 import giphy from "../Assets/images/giphy.gif";
-import {Row, Col, Table} from 'antd';
+import {Table} from 'antd';
 
 export default class ViewAll extends React.Component{
       constructor(props) {
