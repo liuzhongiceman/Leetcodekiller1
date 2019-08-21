@@ -15,7 +15,14 @@ export default class App extends React.Component{
       super(props);
 
       this.state = {
-          data: [],
+          data:[],
+          defaultData: [{
+            number:"sample",
+            difficulty:"easy",
+            date:"2019-08-08",
+            method:"self",
+            round:1
+          }],
           rule:{},
           defaultRule:{
              rule1:"3",
@@ -33,7 +40,7 @@ export default class App extends React.Component{
     componentDidMount() {
          fetch("/getAllProblems")
             .then(res => res.json())
-            .then(data => this.setState({ data }))
+            .then(data => this.setState({ data: data.length>0? data:this.state.defaultData}))
 
         fetch("/getRules")
             .then(res => res.json())
