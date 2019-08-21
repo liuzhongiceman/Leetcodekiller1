@@ -1,9 +1,9 @@
 .problemForm{
-    margin: 0 0 20px 300px ;
+    margin: 0 20px ;
 }
 
 .subBtn{
-    margin: 0 400px 0 0px;
+    margin: 0 400px 0 200px;
 }
 
 .example-input .ant-input {

@@ -139,13 +139,13 @@ class ProblemForm extends React.Component {
         const { formLayout } = this.state;
         const formItemLayout =
                 {
-                    labelCol: { span: 6 },
+                    labelCol: { span: 10 },
                     wrapperCol: { span: 6 },
                 }
         
         const buttonItemLayout =
                 {
-                    wrapperCol: { span: 14, offset: 6 },
+                    wrapperCol: { span: 12, offset: 6 },
                 }
 
         const solvedMethods = [
