@@ -40,7 +40,7 @@ export default class App extends React.Component{
     componentDidMount() {
          fetch("/getAllProblems")
             .then(res => res.json())
-            .then(data => this.setState({ data: data.length>0? data:this.state.defaultData}))
+            .then(data => this.setState({ data: data? data:this.state.defaultData}))
 
         fetch("/getRules")
             .then(res => res.json())
