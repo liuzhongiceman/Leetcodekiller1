@@ -31,15 +31,15 @@ type Problem struct {
 }
 
 type Rule struct {
-	ID         primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"`
-	Rule1     string                `json:"rule1,omitempty" bson:"rule1,omitempty"`
-	Rule2     string                 `json:"rule2,omitempty" bson:"rule2,omitempty"`	
-	Rule3    string                 `json:"rule3,omitempty" bson:"rule3,omitempty"`
-	Rule4     string                 `json:"rule4,omitempty" bson:"rule4,omitempty"`	
-	Rule5     string                 `json:"rule5,omitempty" bson:"rule5,omitempty"`
-	Rule6     string                 `json:"rule6,omitempty" bson:"rule6,omitempty"`	
-	Rule7     string                 `json:"rule7,omitempty" bson:"rule7,omitempty"`
-	Rule8     string                 `json:"rule8,omitempty" bson:"rule8,omitempty"`	
+	ID    primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"`
+	Rule1 string             `json:"rule1,omitempty" bson:"rule1,omitempty"`
+	Rule2 string             `json:"rule2,omitempty" bson:"rule2,omitempty"`
+	Rule3 string             `json:"rule3,omitempty" bson:"rule3,omitempty"`
+	Rule4 string             `json:"rule4,omitempty" bson:"rule4,omitempty"`
+	Rule5 string             `json:"rule5,omitempty" bson:"rule5,omitempty"`
+	Rule6 string             `json:"rule6,omitempty" bson:"rule6,omitempty"`
+	Rule7 string             `json:"rule7,omitempty" bson:"rule7,omitempty"`
+	Rule8 string             `json:"rule8,omitempty" bson:"rule8,omitempty"`
 }
 
 var client *mongo.Client
@@ -63,6 +63,7 @@ func GetRules(response http.ResponseWriter, request *http.Request) {
 	if err != nil {
 		response.WriteHeader(http.StatusInternalServerError)
 		response.Write([]byte(`{ "message": "` + err.Error() + `" }`))
+		fmt.Println("err happens in get rules1")
 		return
 	}
 	defer cursor.Close(ctx)
@@ -74,12 +75,12 @@ func GetRules(response http.ResponseWriter, request *http.Request) {
 	if err := cursor.Err(); err != nil {
 		response.WriteHeader(http.StatusInternalServerError)
 		response.Write([]byte(`{ "message": "` + err.Error() + `" }`))
+		fmt.Println("err happens in get rules2")
 		return
-	}	
+	}
 	lastRule := rules[len(rules)-1]
 	json.NewEncoder(response).Encode(lastRule)
 }
-
 
 func CreateProblem(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("content-type", "application/json")
@@ -97,7 +98,7 @@ func UpdateProblem(response http.ResponseWriter, request *http.Request) {
 	_ = json.NewDecoder(request.Body).Decode(&problem)
 	collection := client.Database("leetcodekiller").Collection("problems")
 	filter := bson.M{"number": bson.M{"$eq": problem.Number}}
-	update := bson.M{"$set": bson.M{"round": problem.Round, "method":problem.Method,"difficulty":problem.Difficulty,"date":problem.Date}}
+	update := bson.M{"$set": bson.M{"round": problem.Round, "method": problem.Method, "difficulty": problem.Difficulty, "date": problem.Date, "link": problem.Link}}
 
 	updateResult, err := collection.UpdateOne(context.Background(), filter, update)
 	if err != nil {
@@ -199,7 +200,7 @@ func main() {
 	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
 	client, _ = mongo.Connect(ctx, clientOptions)
 	router := mux.NewRouter()
-	
+
 	router.HandleFunc("/api/createRule", CreateRule).Methods("POST")
 	router.HandleFunc("/api/getRules", GetRules).Methods("GET")
 
