@@ -1,0 +1,22 @@
+.problemForm{
+    margin: 0 -100px 20px 300px ;
+}
+
+.subBtn{
+    margin: 0 400px 0 0px;
+}
+
+.example-input .ant-input {
+  width: 500px;
+  margin: 0 8px 8px 0;
+}
+
+.error{
+    color:red;
+}
+
+.hidden{
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}

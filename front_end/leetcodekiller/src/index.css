@@ -1,0 +1,24 @@
+@import './styles/App.css';
+@import './styles/ProblemForm.css';
+@import './styles/SolvedToday.css';
+@import './styles/NeedToBeSolved.css';
+@import './styles/DeleteForm.css';
+@import './styles/AboutMe.css';
+@import './styles/Instruction.css';
+@import './styles/Cutomize.css';
+@import './styles/ViewAll.css';
+@import './styles/Home.css';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

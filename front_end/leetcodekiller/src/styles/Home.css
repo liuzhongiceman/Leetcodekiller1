@@ -1,0 +1,34 @@
+
+
+.text-display{
+    margin: 60px 0 50px 600px ;
+}
+
+/* hr{ 
+  border: 20px; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+} */
+
+.hrstyle {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 0 300px 50px 300px 
+}
+
+.table-row{
+  margin: 0 100px;
+}
+
+/* .needToBeSolvedTable{
+    margin:0 0 0 100px;
+}
+
+.needToBeSolvedTable{
+    margin:0 0 0 100px;
+} */

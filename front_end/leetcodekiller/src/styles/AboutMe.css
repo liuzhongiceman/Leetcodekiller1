@@ -1,0 +1,11 @@
+.aboutMe{
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+}
+
+.aboutMe-content {
+  flex: 1;
+  margin: 320px auto;
+
+}

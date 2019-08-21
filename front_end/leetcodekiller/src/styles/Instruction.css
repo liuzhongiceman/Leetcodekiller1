@@ -1,0 +1,11 @@
+.instruction{
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+}
+
+.ins-content {
+  flex: 1;
+  margin: 200px 100px;
+
+}

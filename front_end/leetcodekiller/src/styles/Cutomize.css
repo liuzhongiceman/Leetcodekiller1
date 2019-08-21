@@ -1,0 +1,19 @@
+.customize{
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+}
+
+.customize-content {
+  flex: 1;
+  margin: 100px auto;
+}
+
+.customize-head{
+    text-align:center;
+    margin: 0 0 50px 0px;
+}
+
+.rule-text-display{
+  margin: 0 0 50px 150px ;
+}

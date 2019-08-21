@@ -1,0 +1,15 @@
+.vieAll{
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      margin: 50px 200px;
+}
+
+.vieAll-content {
+  flex: 1;
+  margin: 200px 300px;
+}
+
+.viewAll-text-display{
+    margin: 50px 200px;
+}
