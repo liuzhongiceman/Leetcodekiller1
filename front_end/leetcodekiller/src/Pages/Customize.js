@@ -110,19 +110,21 @@ class Customize extends React.Component {
                 {
                     wrapperCol: { span: 14, offset: 6 },
                 }
-
-        return (
-            <div className="customize">
-                <div className="customize-content">
-                <h2 className="customize-head">Customize Your Review Rules</h2>
-                  <Row justify="space-around" align="middle">
+        const textDisplay =  this.props.rule? 
+                <Row justify="space-around" align="middle">
                     <h2 className="rule-text-display"> 
                         You Current Review Rule is: {this.props.rule.rule1},{this.props.rule.rule2},
                         {this.props.rule.rule3},{this.props.rule.rule4},{this.props.rule.rule5},
                         {this.props.rule.rule6}, {this.props.rule.rule6}, {this.props.rule.rule7},
                         {this.props.rule.rule8}
                     </h2> 
-                </Row>
+                </Row> : null     
+
+        return (
+            <div className="customize">
+                <div className="customize-content">
+                <h2 className="customize-head">Customize Your Review Rules</h2>
+                 {textDisplay}
                  <hr className="hrstyle"/>
                 <Form layout={formLayout} onSubmit={this.onSubmit}  >
                         <Form.Item label="Round1 and Sloved with the help of answer" {...formItemLayout}>
