@@ -185,7 +185,7 @@ class ProblemForm extends React.Component {
                         <Form.Item label="Difficulty of this algorithm (Required)" {...formItemLayout}>
                             <Radio.Group options={difficultieLevel} defaultValue={['1']} onChange={this.difficultyOnChange} />
                         </Form.Item>
-                        <Form.Item label="Rounds have you solved this algorithm (Required)" {...formItemLayout}>
+                        <Form.Item label="Rounds you have solved this algorithm (Required)" {...formItemLayout}>
                             <Radio.Group options={rounds} defaultValue={['1']} onChange={this.roundOnChange} />
                         </Form.Item>
                           <Form.Item label="Link to this algorithm (Optional)" {...formItemLayout}>
