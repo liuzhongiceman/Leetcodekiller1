@@ -125,8 +125,7 @@ class Customize extends React.Component {
                     <h2 className="rule-text-display"> 
                         You Current Review Rule is: {this.props.rule.rule1},{this.props.rule.rule2},
                         {this.props.rule.rule3},{this.props.rule.rule4},{this.props.rule.rule5},
-                        {this.props.rule.rule6}, {this.props.rule.rule6}, {this.props.rule.rule7},
-                        {this.props.rule.rule8}
+                        {this.props.rule.rule6}, {this.props.rule.rule7},{this.props.rule.rule8}
                     </h2> 
                 </Row> : null     
 
