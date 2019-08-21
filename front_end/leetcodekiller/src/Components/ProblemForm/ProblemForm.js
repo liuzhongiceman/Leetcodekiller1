@@ -15,7 +15,7 @@ class ProblemForm extends React.Component {
             link:"",
             hidden:"hidden",
             apiMethod:"POST",
-            apiUrl:"/createProblem"
+            apiUrl:"/createProblem",
         };
     }
 

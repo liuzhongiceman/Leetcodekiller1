@@ -20,10 +20,6 @@ class Customize extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.createRule = this.createRule.bind(this);
     }
-
-    // componentDidMount = () => {
-    //   this.createRule();
-    // }
     
     routeChange() {
         let path = `/home`;
@@ -100,7 +96,7 @@ class Customize extends React.Component {
         })
         .then(response => response.json())
         .then(data => 
-            // console.log("post rule data",data),
+            console.log("post rule data",data),
             window.location.reload(false)
             )
         .catch((err)=>{

@@ -33,19 +33,23 @@ export default class App extends React.Component{
             rule6:"15",
             rule7:"30",
             rule8:"60"
-          }
+          },
       };
     }
 
     componentDidMount() {
-         fetch("/getAllProblems")
-            .then(res => res.json())
-            .then(data => this.setState({ data: data? data:this.state.defaultData}))
+      fetch("/getAllProblems")
+        .then(res => res.json())
+        .then(data =>
+          this.setState({ data: data ? data : this.state.defaultData }),
+        )
 
-        fetch("/getRules")
-            .then(res => res.json())
-            .then(rule => this.setState({ rule }))      
-    }
+       fetch("/getRules")
+        .then(res => res.json())
+        .then(rule => 
+          this.setState({ rule })
+        )
+     }
   render(){
     return (
       <div className="App">
