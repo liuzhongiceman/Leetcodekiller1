@@ -16,7 +16,17 @@ export default class App extends React.Component{
 
       this.state = {
           data: [],
-          rule:{}
+          rule:{},
+          defaultRule:{
+             rule1:"3",
+            rule2:"7",
+            rule3:"7",
+            rule4:"7",
+            rule5:"7",
+            rule6:"15",
+            rule7:"30",
+            rule8:"60"
+          }
       };
     }
 
@@ -38,15 +48,15 @@ export default class App extends React.Component{
             <br/>
             <Switch>
                 <Route exact path='/' 
-                      render={(routeProps) => (<Home data={this.state.data} rule={this.state.rule} />)}/>
+                      render={(routeProps) => (<Home data={this.state.data} rule={this.state.rule.rule1? this.state.rule: this.state.defaultRule} />)}/>
                 <Route path="/home" 
-                      render={(routeProps) => (<Home data={this.state.data} rule={this.state.rule}/>)}/>
+                      render={(routeProps) => (<Home data={this.state.data} rule={this.state.rule.rule1? this.state.rule: this.state.defaultRule}/>)}/>
                 <Route path="/aboutMe" component={AboutMe}/>
                 <Route path="/instruction" component={Instruction}/>
                 <Route path="/customize" 
-                       render={(routeProps) => (<Customize rule={this.state.rule}/>)}/>
+                       render={(routeProps) => (<Customize rule={this.state.rule.rule1? this.state.rule: this.state.defaultRule}/>)}/>
                 <Route path="/viewAll" 
-                      render={(routeProps) => (<ViewAll data={this.state.data} rule={this.state.rule}/>)}/>
+                      render={(routeProps) => (<ViewAll data={this.state.data} rule={this.state.rule.rule1? this.state.rule: this.state.defaultRule}/>)}/>
             </Switch>
         </BrowserRouter>
         <Footer style={{ textAlign: 'center', position: "sticky", bottom: "0" }}> ©2019 Created by NEU Student Zhong Liu</Footer>

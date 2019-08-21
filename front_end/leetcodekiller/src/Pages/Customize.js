@@ -7,26 +7,31 @@ class Customize extends React.Component {
     constructor() {
         super();
         this.state = {
-           rule1:"",
-           rule2:"",
-           rule3:"",
-           rule4:"",
-           rule5:"",
-           rule6:"",
-           rule7:"",
-           rule8:""
+           rule1:"3",
+           rule2:"7",
+           rule3:"7",
+           rule4:"7",
+           rule5:"7",
+           rule6:"15",
+           rule7:"30",
+           rule8:"60"
         };
         this.routeChange = this.routeChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
+        this.createRule = this.createRule.bind(this);
     }
+
+    // componentDidMount = () => {
+    //   this.createRule();
+    // }
+    
     routeChange() {
         let path = `/home`;
         this.props.history.push(path);
     }
 
     inputonChange1 = (e) =>{
-        // console.log(typeof(e.target.value));
+        console.log(typeof(e.target.value));
         this.setState({rule1 : e.target.value })
     }
 
@@ -69,6 +74,11 @@ class Customize extends React.Component {
     onSubmit = (e) => {
         // console.log("post rule submitted")
         e.preventDefault();
+        this.createRule();
+    }  
+
+    createRule = () =>{
+        console.log("creating rule");
         fetch("/createRule",{
             method:'POST',
             mode: 'cors',
@@ -96,7 +106,7 @@ class Customize extends React.Component {
         .catch((err)=>{
             console.log("post failed :", err)
         })
-    }  
+    }
 
     render() {
         const { formLayout } = this.state;
@@ -110,7 +120,7 @@ class Customize extends React.Component {
                 {
                     wrapperCol: { span: 14, offset: 6 },
                 }
-        const textDisplay =  this.props.rule? 
+        const textDisplay =  this.props.rule.rule1? 
                 <Row justify="space-around" align="middle">
                     <h2 className="rule-text-display"> 
                         You Current Review Rule is: {this.props.rule.rule1},{this.props.rule.rule2},
