@@ -63,7 +63,7 @@ class SolvedToday extends React.Component {
         return (
             <div className="form-display">
                 <h3> {dataSrouce.length} Problems Solved Today</h3>
-                <Table columns={columns} dataSource={dataSrouce} pagination={{ pageSize: 10 }} scroll={{ y: 550 }} rowKey="number" />
+                <Table columns={columns} dataSource={dataSrouce} pagination={{ pageSize: 10 }} scroll={{ y: 650 }} rowKey="number" />
             </div>
         )
     }

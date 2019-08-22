@@ -29,7 +29,7 @@ class DeleteForm extends React.Component {
 
     inputonChange = (e) =>{
         console.log(e.target.value)
-        this.setState({problemNumber : e.target.value })
+        this.setState({ problemNumber: e.target.value.replace(/^\s+|\s+$/gm, '') })
     }
     
   render() {

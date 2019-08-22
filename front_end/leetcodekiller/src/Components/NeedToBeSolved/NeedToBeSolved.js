@@ -93,7 +93,7 @@ class NeedToBeSolved extends React.Component {
         return (
             <div className="form-display">
                 <h3>{res.length} Problems Need to Be Reviwed</h3>
-                 <Table columns={columns} dataSource={dataSrouce} pagination={{ pageSize: 10 }} scroll={{ y: 550 }} rowKey="number" />
+                 <Table columns={columns} dataSource={dataSrouce} pagination={{ pageSize: 10 }} scroll={{ y: 650 }} rowKey="number" />
             </div>
         )
     }
